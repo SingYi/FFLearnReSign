@@ -12,6 +12,10 @@
 		B52934BD1FFDD05100383316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52934BC1FFDD05100383316 /* Assets.xcassets */; };
 		B52934C01FFDD05100383316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52934BE1FFDD05100383316 /* Main.storyboard */; };
 		B52934C31FFDD05100383316 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B52934C21FFDD05100383316 /* main.m */; };
+		B52934CD1FFDFF6000383316 /* FFFileTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B52934CC1FFDFF6000383316 /* FFFileTools.m */; };
+		B52934D11FFE0D4600383316 /* FFProvisioningProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = B52934D01FFE0D4600383316 /* FFProvisioningProfile.m */; };
+		B55B0DF11FFE245000011FA8 /* FFDateFormatterTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B55B0DF01FFE245000011FA8 /* FFDateFormatterTools.m */; };
+		B55B0DF41FFE2B2900011FA8 /* FFWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B55B0DF31FFE2B2900011FA8 /* FFWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +28,14 @@
 		B52934BF1FFDD05100383316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B52934C11FFDD05100383316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52934C21FFDD05100383316 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B52934C41FFDD05100383316 /* FFResign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FFResign.entitlements; sourceTree = "<group>"; };
+		B52934CB1FFDFF6000383316 /* FFFileTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFileTools.h; sourceTree = "<group>"; };
+		B52934CC1FFDFF6000383316 /* FFFileTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFileTools.m; sourceTree = "<group>"; };
+		B52934CF1FFE0D4600383316 /* FFProvisioningProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFProvisioningProfile.h; sourceTree = "<group>"; };
+		B52934D01FFE0D4600383316 /* FFProvisioningProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFProvisioningProfile.m; sourceTree = "<group>"; };
+		B55B0DEF1FFE245000011FA8 /* FFDateFormatterTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFDateFormatterTools.h; sourceTree = "<group>"; };
+		B55B0DF01FFE245000011FA8 /* FFDateFormatterTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFDateFormatterTools.m; sourceTree = "<group>"; };
+		B55B0DF21FFE2B2900011FA8 /* FFWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFWindowController.h; sourceTree = "<group>"; };
+		B55B0DF31FFE2B2900011FA8 /* FFWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +70,30 @@
 			children = (
 				B52934B61FFDD05100383316 /* AppDelegate.h */,
 				B52934B71FFDD05100383316 /* AppDelegate.m */,
+				B55B0DF21FFE2B2900011FA8 /* FFWindowController.h */,
+				B55B0DF31FFE2B2900011FA8 /* FFWindowController.m */,
+				B52934CA1FFDFE8800383316 /* Tools */,
 				B52934B91FFDD05100383316 /* ViewController.h */,
 				B52934BA1FFDD05100383316 /* ViewController.m */,
 				B52934BC1FFDD05100383316 /* Assets.xcassets */,
 				B52934BE1FFDD05100383316 /* Main.storyboard */,
 				B52934C11FFDD05100383316 /* Info.plist */,
 				B52934C21FFDD05100383316 /* main.m */,
-				B52934C41FFDD05100383316 /* FFResign.entitlements */,
 			);
 			path = FFResign;
+			sourceTree = "<group>";
+		};
+		B52934CA1FFDFE8800383316 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B52934CB1FFDFF6000383316 /* FFFileTools.h */,
+				B52934CC1FFDFF6000383316 /* FFFileTools.m */,
+				B52934CF1FFE0D4600383316 /* FFProvisioningProfile.h */,
+				B52934D01FFE0D4600383316 /* FFProvisioningProfile.m */,
+				B55B0DEF1FFE245000011FA8 /* FFDateFormatterTools.h */,
+				B55B0DF01FFE245000011FA8 /* FFDateFormatterTools.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +128,11 @@
 					B52934B21FFDD05100383316 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -141,8 +172,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52934BB1FFDD05100383316 /* ViewController.m in Sources */,
+				B52934CD1FFDFF6000383316 /* FFFileTools.m in Sources */,
+				B55B0DF41FFE2B2900011FA8 /* FFWindowController.m in Sources */,
 				B52934C31FFDD05100383316 /* main.m in Sources */,
 				B52934B81FFDD05100383316 /* AppDelegate.m in Sources */,
+				B55B0DF11FFE245000011FA8 /* FFDateFormatterTools.m in Sources */,
+				B52934D11FFE0D4600383316 /* FFProvisioningProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,12 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FFResign/FFResign.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JR27SLBFXN;
 				INFOPLIST_FILE = FFResign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Interesting.FFResign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -282,12 +317,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FFResign/FFResign.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JR27SLBFXN;
 				INFOPLIST_FILE = FFResign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Interesting.FFResign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
