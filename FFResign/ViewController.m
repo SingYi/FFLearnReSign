@@ -123,6 +123,10 @@
 //        [self unzipIpa];
     }
 }
+- (IBAction)outPutPath:(id)sender {
+
+
+}
 
 - (IBAction)refreshCerButton:(NSButton *)sender {
     [self getCertificates];
